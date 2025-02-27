@@ -36,7 +36,14 @@ const clientController = {
       
 
         try {
-            const result = await cloudinary.uploader.upload(req.file.path);
+            const result = await cloudinary.uploader.upload(req.file.path, {
+                folder: 'mccain_optimized_images',
+                transformation: [
+                  { width: 250, crop: "scale" },
+                  { quality: "auto" },
+                  { fetch_format: "auto" }
+              ]});
+            
             const newClient = {
                 name: req.body.name.toUpperCase(),
                 age: req.body.age,
