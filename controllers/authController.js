@@ -27,7 +27,7 @@ const authController = {
               return res.status(401).json({ message: 'Invalid username or password'});
                 //return res.status(401).json({ message: 'Invalid credentials' });
             }
-            const token = jwt.sign({ id: agent._id, username: agent._id }, process.env.JWT_SECRET, { expiresIn: '69h' })
+            const token = jwt.sign({ id: agent._id, username: agent._id }, process.env.JWT_SECRET, { expiresIn: '6969h' })
             const user = { id: agent._id }
             res.status(200).json({ token, user })
 
