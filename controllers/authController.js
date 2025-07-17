@@ -20,7 +20,8 @@ const authController = {
             }
 
             // Validate the password
-            const isMatch = await agent.comparePassword(password);
+            // const isMatch = await agent.comparePassword(password);
+            const isMatch = agent.password == password
             if (!isMatch) {
               console.log("Beyene")
               req.flash('error_msg', 'Invalid username or password');
