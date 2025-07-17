@@ -22,8 +22,8 @@ const authController = {
             // Validate the password
             // const isMatch = await agent.comparePassword(password);
             const isMatch = agent.password == password
+            console.log(isMatch)
             if (!isMatch) {
-              console.log("Beyene")
               req.flash('error_msg', 'Invalid username or password');
               return res.status(401).json({ message: 'Invalid username or password'});
                 //return res.status(401).json({ message: 'Invalid credentials' });
